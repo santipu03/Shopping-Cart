@@ -1,10 +1,11 @@
+import React from 'react'
 
-function App() {
+function App () {
   return (
     <div className="App">
       vergotas
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
