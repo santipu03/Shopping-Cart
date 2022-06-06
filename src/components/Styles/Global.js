@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.black};
+  }
 `
 
 export default GlobalStyles
