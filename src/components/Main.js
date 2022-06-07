@@ -20,6 +20,13 @@ const Main = () => {
 const MainContainer = styled.main`
   min-height: calc(100vh - 120px);
   padding: 20px 100px;
+
+  @media (max-width: 1100px) {
+    padding: 20px 50px;
+  }
+  @media (max-width: 700px) {
+    padding: 20px;
+  }
 `
 
 export default Main

@@ -73,16 +73,22 @@ function Shop () {
 
 const ShopContainer = styled.div`
   padding: 20px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0);
+  backdrop-filter: blur(8px);
   min-height: 420px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  justify-items: center;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
 `
 
 const ItemContainer = styled.div`
   padding: 10px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -93,6 +99,11 @@ const ItemContainer = styled.div`
     width: 250px;
     height: 250px;
     object-fit:cover;
+
+    @media (max-width: 800px) {
+      width: 200px;
+      height: 200px;
+    }
   }
   & button {
     height: 40px;

@@ -31,6 +31,30 @@ const HeaderContainer = styled.nav`
   & > div {
     display: flex;
     gap: 90px;
+
+    @media (max-width: 1100px) {
+      gap: 50px;
+    }
+    @media (max-width: 510px) {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    padding: 0 150px;
+  }
+  @media (max-width: 900px) {
+    padding: 0 100px;
+  }
+  @media (max-width: 750px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 650px) {
+    padding: 0 20px;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 510px) {
+    font-size: 1.1rem;
   }
 `
 

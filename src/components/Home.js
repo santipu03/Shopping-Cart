@@ -24,11 +24,23 @@ const HomeContainer = styled.div`
   padding: 0 100px;
   letter-spacing: 1px;
 
+  @media (max-width: 900px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 750px) {
+    padding: 0;
+    font-size: 1.3rem;
+  }
+
   & h3 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 15px;
     font-style: italic;
+
+    @media (max-width: 750px) {
+      font-size: 2.5rem;
+    }
   }
   & button {
     height: 60px;
@@ -40,6 +52,10 @@ const HomeContainer = styled.div`
     background-color: rgba(255,255,255,0.7);
     margin-top: 30px;
     cursor: pointer;
+
+    @media (max-width: 750px) {
+      font-size:  1rem;
+    }
   }
   & .quote {
     font-style: italic;
@@ -47,6 +63,10 @@ const HomeContainer = styled.div`
   & .author {
     font-size: 1.2rem;
     margin-top: 10px;
+
+    @media (max-width: 750px) {
+      font-size:  1rem;
+    }
   }
 `
 

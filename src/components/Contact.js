@@ -55,12 +55,27 @@ const ContactContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+ 
+    @media (max-width: 550px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    } 
   }
   & img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     cursor: pointer;
+
+    @media (max-width: 750px) {
+      height: 70px;
+      width: 70px;
+    }
+    @media (max-width: 550px) {
+      height: 50px;
+      width: 50px;
+    }
   }
 `
 
