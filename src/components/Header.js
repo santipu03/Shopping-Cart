@@ -3,8 +3,9 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderContainer>
       <Link to='/'>Rick And Morty</Link>
@@ -12,10 +13,17 @@ const Header = () => {
         <Link to='/'>Home</Link>
         <Link to='shop'>Shop</Link>
         <Link to='contact'>Contact</Link>
-        <FontAwesomeIcon icon={faCartShopping} size='lg'/>
+        <IconContainer onClick={props.onCartClicked}>
+          <FontAwesomeIcon icon={faCartShopping} size='lg' />
+          <div>0</div>
+        </IconContainer>
       </div>
     </HeaderContainer>
   )
+}
+
+Header.propTypes = {
+  onCartClicked: PropTypes.func.isRequired
 }
 
 const HeaderContainer = styled.nav`
@@ -30,6 +38,7 @@ const HeaderContainer = styled.nav`
 
   & > div {
     display: flex;
+    align-items: center;
     gap: 90px;
 
     @media (max-width: 1100px) {
@@ -38,6 +47,7 @@ const HeaderContainer = styled.nav`
     @media (max-width: 510px) {
       gap: 20px;
     }
+ 
   }
 
   @media (max-width: 1100px) {
@@ -55,6 +65,26 @@ const HeaderContainer = styled.nav`
   }
   @media (max-width: 510px) {
     font-size: 1.1rem;
+  }
+`
+
+const IconContainer = styled.div`
+  cursor: pointer;
+  position: relative;
+
+
+  & div {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: #f87171;
+    border-radius: 50%;
+    top: -12px;
+    right: -22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
   }
 `
 

@@ -49,7 +49,7 @@ const HomeContainer = styled.div`
     font-size: 1.2rem;
     border-radius: 5px;
     border: 1px solid #000;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.6);
     margin-top: 30px;
     cursor: pointer;
 

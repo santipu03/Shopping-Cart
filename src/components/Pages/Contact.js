@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import GithubLogo from '../assets/github.png'
-import TwitterLogo from '../assets/twitter.png'
-import TwitchLogo from '../assets/twitch.png'
-import YoutubeLogo from '../assets/youtube.png'
-import InstagramLogo from '../assets/instagram.png'
+import GithubLogo from '../../assets/logos/github.png'
+import TwitterLogo from '../../assets/logos/twitter.png'
+import TwitchLogo from '../../assets/logos/twitch.png'
+import YoutubeLogo from '../../assets/logos/youtube.png'
+import InstagramLogo from '../../assets/logos/instagram.png'
 
 function Contact () {
   return (
