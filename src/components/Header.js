@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -10,6 +12,7 @@ const Header = () => {
         <Link to='/'>Home</Link>
         <Link to='shop'>Shop</Link>
         <Link to='contact'>Contact</Link>
+        <FontAwesomeIcon icon={faCartShopping} size='lg'/>
       </div>
     </HeaderContainer>
   )

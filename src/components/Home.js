@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 function Home () {
   return (
@@ -10,8 +11,9 @@ function Home () {
       <div className='quote'>
         otherwise you&apos;re just an inert chunk of randomly assembled molecules drifting wherever the universe blows you.&quot;
       </div>
-      <div className='author'>Rick Sanchez</div>
-      <button>Shop Now</button>
+      <div className='author'>- Rick Sanchez -</div>
+      <Link to='shop'><button>Shop</button></Link>
+
     </HomeContainer>
   )
 }
@@ -19,6 +21,7 @@ function Home () {
 const HomeContainer = styled.div`
   font-size: 1.5rem;
   margin-top: 40px;
+  padding: 0 100px;
   letter-spacing: 1px;
 
   & h3 {
@@ -35,7 +38,7 @@ const HomeContainer = styled.div`
     border-radius: 5px;
     border: 1px solid #000;
     background-color: rgba(255,255,255,0.7);
-    margin-top: 20px;
+    margin-top: 30px;
     cursor: pointer;
   }
   & .quote {

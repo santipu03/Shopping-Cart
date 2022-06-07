@@ -19,7 +19,7 @@ const Main = () => {
 
 const MainContainer = styled.main`
   min-height: calc(100vh - 120px);
-  padding: 20px 200px;
+  padding: 20px 100px;
 `
 
 export default Main
