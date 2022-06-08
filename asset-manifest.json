@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/Shopping-Cart/static/js/main.2c6947b0.js",
+    "static/media/background.jpg": "/Shopping-Cart/static/media/background.cdf54e9b48a4b64e16df.jpg",
+    "static/media/middlefinger.jpg": "/Shopping-Cart/static/media/middlefinger.31a89fa90b3f32a78434.jpg",
+    "static/media/rickandmorty.jpg": "/Shopping-Cart/static/media/rickandmorty.25ac5fd67ea3eedc3d9b.jpg",
+    "static/media/littlerick.jpg": "/Shopping-Cart/static/media/littlerick.841302848638d5de3922.jpg",
+    "static/media/brains.jpg": "/Shopping-Cart/static/media/brains.ffcbd8e3f8b605a79b5a.jpg",
+    "static/media/abstract.jpg": "/Shopping-Cart/static/media/abstract.602939fa4ce040891855.jpg",
+    "static/media/instagram.png": "/Shopping-Cart/static/media/instagram.fa104452688f31e0bbe3.png",
+    "static/media/distortedrickandmorty.jpg": "/Shopping-Cart/static/media/distortedrickandmorty.2ed9fa3380b8522fcc9c.jpg",
+    "static/media/misix.jpg": "/Shopping-Cart/static/media/misix.d1554fc42691fe2e693c.jpg",
+    "static/media/pickle.jpg": "/Shopping-Cart/static/media/pickle.2197043864e141729747.jpg",
+    "static/media/butthole.jpg": "/Shopping-Cart/static/media/butthole.3908181d5c2c314bbecd.jpg",
+    "index.html": "/Shopping-Cart/index.html",
+    "main.2c6947b0.js.map": "/Shopping-Cart/static/js/main.2c6947b0.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2c6947b0.js"
+  ]
+}
