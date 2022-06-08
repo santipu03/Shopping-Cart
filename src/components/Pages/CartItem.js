@@ -38,6 +38,7 @@ const ItemContainer = styled.div`
   padding: 10px;
   display: flex;
   gap: 30px;
+  justify-content: stretch;
 
   & img {
     object-fit: cover;
@@ -49,12 +50,14 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 135px;
   align-items: center;
   justify-content: center;
 
   & .title {
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
   }
   & input {
     width: 40px;

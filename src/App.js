@@ -27,15 +27,38 @@ function App () {
   }
 
   const handleAddToCart = (item) => {
-    setItemsInCart((prevState) => [
-      ...prevState, {
-        id: item.id,
-        title: item.title,
-        img: item.img,
-        price: item.price,
-        quantity: '1'
+    console.log(item)
+    let changedItem = false
+
+    // First, if the product is already on cart, we add 1 to quantity
+    setItemsInCart(prevState => {
+      const newArray = prevState.map(itemAdded => {
+        if (itemAdded.title === item.title) {
+          console.log(itemAdded.title, item.title)
+          changedItem = true
+          return {
+            ...itemAdded, quantity: (parseInt(itemAdded.quantity) + 1).toString()
+          }
+        }
+        return itemAdded
+      })
+      return newArray
+    })
+
+    // If we don't find the product in card, we add it
+    setItemsInCart((prevState) => {
+      if (!changedItem) {
+        return [
+          ...prevState, {
+            id: item.id,
+            title: item.title,
+            img: item.img,
+            price: item.price,
+            quantity: '1'
+          }]
       }
-    ])
+      return prevState
+    })
   }
 
   return (
