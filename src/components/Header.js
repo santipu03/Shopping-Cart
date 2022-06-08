@@ -15,7 +15,7 @@ const Header = (props) => {
         <Link to='contact'>Contact</Link>
         <IconContainer onClick={props.onCartClicked}>
           <FontAwesomeIcon icon={faCartShopping} size='lg' />
-          <div>0</div>
+          <div>{props.numOfItemsInCart}</div>
         </IconContainer>
       </div>
     </HeaderContainer>
@@ -23,7 +23,8 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-  onCartClicked: PropTypes.func.isRequired
+  onCartClicked: PropTypes.func.isRequired,
+  numOfItemsInCart: PropTypes.number.isRequired
 }
 
 const HeaderContainer = styled.nav`

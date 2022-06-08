@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,9 +10,20 @@ import Cart from './components/Pages/Cart'
 function App () {
   const [itemsInCart, setItemsInCart] = useState([])
   const [showCart, setShowCart] = useState(false)
+  const [numOfItemsInCart, setNumOfItemsInCart] = useState(0)
 
   const handleCloseCart = () => setShowCart(false)
   const handleShowCart = () => setShowCart(true)
+
+  useEffect(() => {
+    setNumOfItemsInCart(() => {
+      let numOfItems = 0
+      itemsInCart.forEach(item => {
+        numOfItems += parseInt(item.quantity)
+      })
+      return numOfItems
+    })
+  })
 
   const handleChangeQuantity = (e, id) => {
     setItemsInCart(prevState => {
@@ -27,14 +38,12 @@ function App () {
   }
 
   const handleAddToCart = (item) => {
-    console.log(item)
     let changedItem = false
 
     // First, if the product is already on cart, we add 1 to quantity
     setItemsInCart(prevState => {
       const newArray = prevState.map(itemAdded => {
         if (itemAdded.title === item.title) {
-          console.log(itemAdded.title, item.title)
           changedItem = true
           return {
             ...itemAdded, quantity: (parseInt(itemAdded.quantity) + 1).toString()
@@ -66,6 +75,7 @@ function App () {
       <AppContainer>
         <Header
           onCartClicked={handleShowCart}
+          numOfItemsInCart={numOfItemsInCart}
         />
         <Main
           onAddToCart={handleAddToCart}
