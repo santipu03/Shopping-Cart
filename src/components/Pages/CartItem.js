@@ -5,12 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function CartItem (props) {
+  const totalPrice = `$${parseInt(props.price.substring(1)) * props.quantity}`
+
   return (
     <ItemContainer>
       <img src={props.img}></img>
       <InfoContainer>
         <div className='title'>{props.title}</div>
-        <div className='price'>{props.price}</div>
+        <div className='price'>{totalPrice}</div>
         <QuantityContainer>
           <button onClick={() => props.onChangeQuantity(props.quantity - 1, props.id)}>
             <FontAwesomeIcon icon={faMinus} className='icon'/>

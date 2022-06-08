@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import CartItem from './CartItem'
 
 export default function Cart (props) {
+  const [totalCartPrice, setTotalCartPrice] = useState(0)
+
+  useEffect(() => {
+    setTotalCartPrice(() => (
+      props.itemsInCart.reduce((prev, curr) => {
+        return prev + parseInt(curr.price.substring(1)) * curr.quantity
+      }, 0)
+    ))
+  })
+
   const itemsToDisplay = props.itemsInCart.map(item => (
     <CartItem
       key={item.id}
@@ -23,7 +33,7 @@ export default function Cart (props) {
         <ItemsContainer>
           {itemsToDisplay}
         </ItemsContainer>
-        <TotalContainer>Total: $87</TotalContainer>
+        <TotalContainer>Total: ${totalCartPrice}</TotalContainer>
         <ButtonContainer>
           <button className='submit'>Checkout</button>
           <button className='close' onClick={props.onCloseCart}>Close</button>
