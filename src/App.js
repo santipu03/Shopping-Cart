@@ -19,19 +19,27 @@ function App () {
     setNumOfItemsInCart(() => {
       let numOfItems = 0
       itemsInCart.forEach(item => {
-        numOfItems += parseInt(item.quantity)
+        numOfItems += item.quantity
       })
       return numOfItems
     })
   })
 
-  const handleChangeQuantity = (e, id) => {
+  const handleChangeQuantity = (value, id) => {
+    // First, change the quantity
     setItemsInCart(prevState => {
       const newArray = prevState.map(item => {
         if (item.id === id) {
-          return { ...item, quantity: e.target.value }
+          return { ...item, quantity: value }
         }
         return item
+      })
+      return newArray
+    })
+    // Second, delete any item that its quantity is 0 or less
+    setItemsInCart((prevState) => {
+      const newArray = prevState.filter(item => {
+        return item.quantity > 0
       })
       return newArray
     })
@@ -46,7 +54,7 @@ function App () {
         if (itemAdded.title === item.title) {
           changedItem = true
           return {
-            ...itemAdded, quantity: (parseInt(itemAdded.quantity) + 1).toString()
+            ...itemAdded, quantity: itemAdded.quantity + 1
           }
         }
         return itemAdded
@@ -63,7 +71,7 @@ function App () {
             title: item.title,
             img: item.img,
             price: item.price,
-            quantity: '1'
+            quantity: 1
           }]
       }
       return prevState

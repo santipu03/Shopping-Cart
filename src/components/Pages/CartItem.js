@@ -12,13 +12,17 @@ export default function CartItem (props) {
         <div className='title'>{props.title}</div>
         <div className='price'>{props.price}</div>
         <QuantityContainer>
-          <FontAwesomeIcon icon={faMinus} className='icon'/>
+          <button onClick={() => props.onChangeQuantity(props.quantity - 1, props.id)}>
+            <FontAwesomeIcon icon={faMinus} className='icon'/>
+          </button>
           <input
             type={'text'}
-            onChange={(e) => props.onChangeQuantity(e, props.id) }
-            value={props.quantity}>
+            value={props.quantity}
+            readOnly>
           </input>
-          <FontAwesomeIcon icon={faPlus} className='icon'/>
+          <button onClick={() => props.onChangeQuantity(props.quantity + 1, props.id)}>
+            <FontAwesomeIcon icon={faPlus} className='icon'/>
+          </button>
         </QuantityContainer>
       </InfoContainer>
     </ItemContainer>
@@ -30,7 +34,7 @@ CartItem.propTypes = {
   price: PropTypes.string.isRequired,
   img: PropTypes.node.isRequired,
   onChangeQuantity: PropTypes.func.isRequired,
-  quantity: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired
 }
 
@@ -66,6 +70,7 @@ const InfoContainer = styled.div`
     border: 1px solid #888;
     text-align: center;
     font: inherit;
+    cursor: auto;
   }
 `
 
@@ -74,7 +79,19 @@ const QuantityContainer = styled.div`
   gap: 10px;
   align-items: center;
 
-  &  .icon{
+  & button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #888;
+    border-radius: 5px;
     cursor: pointer;
+
+    &:active {
+      background-color: rgba(0,0,0,0.1);
+    }
   }
 `
