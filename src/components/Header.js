@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 const Header = (props) => {
   return (
     <HeaderContainer>
-      <Link to="/">Rick And Morty</Link>
+      <Link to="Shopping-Cart/">Rick And Morty</Link>
       <div>
         <Link to="Shopping-Cart/">Home</Link>
         <Link to="Shopping-Cart/shop">Shop</Link>
