@@ -2,11 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Footer = () => {
-  return (
-    <FooterContainer>
-      Made by santipu_
-    </FooterContainer>
-  )
+  return <FooterContainer>Made by santipu_</FooterContainer>
 }
 
 const FooterContainer = styled.footer`

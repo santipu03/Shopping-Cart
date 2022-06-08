@@ -7,14 +7,14 @@ export default function Cart (props) {
   const [totalCartPrice, setTotalCartPrice] = useState(0)
 
   useEffect(() => {
-    setTotalCartPrice(() => (
+    setTotalCartPrice(() =>
       props.itemsInCart.reduce((prev, curr) => {
         return prev + parseInt(curr.price.substring(1)) * curr.quantity
       }, 0)
-    ))
+    )
   })
 
-  const itemsToDisplay = props.itemsInCart.map(item => (
+  const itemsToDisplay = props.itemsInCart.map((item) => (
     <CartItem
       key={item.id}
       id={item.id}
@@ -28,15 +28,15 @@ export default function Cart (props) {
 
   return (
     <CartOverlay isCartOpen={props.isCartOpen} onClick={props.onCloseCart}>
-      <CartContainer onClick={e => e.stopPropagation()}>
+      <CartContainer onClick={(e) => e.stopPropagation()}>
         <CartTitle>Your Cart</CartTitle>
-        <ItemsContainer>
-          {itemsToDisplay}
-        </ItemsContainer>
+        <ItemsContainer>{itemsToDisplay}</ItemsContainer>
         <TotalContainer>Total: ${totalCartPrice}</TotalContainer>
         <ButtonContainer>
-          <button className='submit'>Checkout</button>
-          <button className='close' onClick={props.onCloseCart}>Close</button>
+          <button className="submit">Checkout</button>
+          <button className="close" onClick={props.onCloseCart}>
+            Close
+          </button>
         </ButtonContainer>
       </CartContainer>
     </CartOverlay>
@@ -57,8 +57,8 @@ const CartOverlay = styled.div`
   top: 0;
   left: 0;
   background-color: ${({ theme }) => theme.colors.cartOverlay};
-  visibility: ${props => props.isCartOpen ? 'visible' : 'hidden'};
-  z-index: ${props => props.isCartOpen ? 10 : -10};
+  visibility: ${(props) => (props.isCartOpen ? 'visible' : 'hidden')};
+  z-index: ${(props) => (props.isCartOpen ? 10 : -10)};
 `
 
 const CartContainer = styled.div`
@@ -113,5 +113,5 @@ const TotalContainer = styled.div`
   margin-top: 20px;
   font-weight: bold;
   font-size: 1.3rem;
-  text-align: center
+  text-align: center;
 `

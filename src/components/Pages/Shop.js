@@ -72,11 +72,11 @@ function Shop (props) {
   ]
 
   const handleClick = (id) => {
-    const itemToCart = Items.find(item => item.id === id)
+    const itemToCart = Items.find((item) => item.id === id)
     props.onAddToCart(itemToCart)
   }
 
-  const itemsToDisplay = Items.map(item => (
+  const itemsToDisplay = Items.map((item) => (
     <ShopItem
       key={item.id}
       id={item.id}
@@ -87,11 +87,7 @@ function Shop (props) {
     />
   ))
 
-  return (
-    <ShopContainer>
-      {itemsToDisplay}
-    </ShopContainer>
-  )
+  return <ShopContainer>{itemsToDisplay}</ShopContainer>
 }
 
 Shop.propTypes = {
@@ -110,7 +106,7 @@ const ShopContainer = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    }
+  }
 `
 
 export default Shop

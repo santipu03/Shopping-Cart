@@ -11,19 +11,19 @@ export default function CartItem (props) {
     <ItemContainer>
       <img src={props.img}></img>
       <InfoContainer>
-        <div className='title'>{props.title}</div>
-        <div className='price'>{totalPrice}</div>
+        <div className="title">{props.title}</div>
+        <div className="price">{totalPrice}</div>
         <QuantityContainer>
-          <button onClick={() => props.onChangeQuantity(props.quantity - 1, props.id)}>
-            <FontAwesomeIcon icon={faMinus} className='icon'/>
+          <button
+            onClick={() => props.onChangeQuantity(props.quantity - 1, props.id)}
+          >
+            <FontAwesomeIcon icon={faMinus} className="icon" />
           </button>
-          <input
-            type={'text'}
-            value={props.quantity}
-            readOnly>
-          </input>
-          <button onClick={() => props.onChangeQuantity(props.quantity + 1, props.id)}>
-            <FontAwesomeIcon icon={faPlus} className='icon'/>
+          <input type={'text'} value={props.quantity} readOnly></input>
+          <button
+            onClick={() => props.onChangeQuantity(props.quantity + 1, props.id)}
+          >
+            <FontAwesomeIcon icon={faPlus} className="icon" />
           </button>
         </QuantityContainer>
       </InfoContainer>

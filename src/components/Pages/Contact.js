@@ -9,30 +9,44 @@ import InstagramLogo from '../../assets/logos/instagram.png'
 function Contact () {
   return (
     <ContactContainer>
-      <div className='quote-section'>
-        <div className='quote'>
+      <div className="quote-section">
+        <div className="quote">
           “Boom! Big reveal! I turned myself into a pickle!”
         </div>
-        <div className='author'>
-          - Rick Sanchez -
-        </div>
+        <div className="author">- Rick Sanchez -</div>
       </div>
-      <div className='logo-container'>
-      <a href='https://github.com/santipu03' target='_blank' rel="noreferrer">
-        <img src={GithubLogo}></img>
-      </a>
-      <a href='https://www.youtube.com/watch?v=NWMRx4G9zjo' target='_blank' rel="noreferrer">
-        <img src={TwitterLogo}></img>
-      </a>
-      <a href='https://www.youtube.com/watch?v=Q8Oz-zwcsCk' target='_blank' rel="noreferrer">
-        <img src={TwitchLogo}></img>
-      </a>
-      <a href='https://www.youtube.com/watch?v=d0NFdR08gFA' target='_blank' rel="noreferrer">
-        <img src={YoutubeLogo}></img>
-      </a>
-      <a href='https://www.youtube.com/watch?v=YFEBVI1tmcE' target='_blank' rel="noreferrer">
-        <img src={InstagramLogo}></img>
-      </a>
+      <div className="logo-container">
+        <a href="https://github.com/santipu03" target="_blank" rel="noreferrer">
+          <img src={GithubLogo}></img>
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=NWMRx4G9zjo"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={TwitterLogo}></img>
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=Q8Oz-zwcsCk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={TwitchLogo}></img>
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=d0NFdR08gFA"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={YoutubeLogo}></img>
+        </a>
+        <a
+          href="https://www.youtube.com/watch?v=YFEBVI1tmcE"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={InstagramLogo}></img>
+        </a>
       </div>
     </ContactContainer>
   )
@@ -55,12 +69,12 @@ const ContactContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
- 
+
     @media (max-width: 550px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-    } 
+    }
   }
   & img {
     width: 100px;

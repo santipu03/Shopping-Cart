@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 function Home () {
   return (
     <HomeContainer>
-      <h3>
-        &quot;To live is to risk it all,
-      </h3>
-      <div className='quote'>
-        otherwise you&apos;re just an inert chunk of randomly assembled molecules drifting wherever the universe blows you.&quot;
+      <h3>&quot;To live is to risk it all,</h3>
+      <div className="quote">
+        otherwise you&apos;re just an inert chunk of randomly assembled
+        molecules drifting wherever the universe blows you.&quot;
       </div>
-      <div className='author'>- Rick Sanchez -</div>
-      <Link to='shop'><button>Shop</button></Link>
-
+      <div className="author">- Rick Sanchez -</div>
+      <Link to="shop">
+        <button>Shop</button>
+      </Link>
     </HomeContainer>
   )
 }
@@ -57,7 +57,7 @@ const HomeContainer = styled.div`
     }
 
     @media (max-width: 750px) {
-      font-size:  1rem;
+      font-size: 1rem;
     }
   }
   & .quote {
@@ -68,7 +68,7 @@ const HomeContainer = styled.div`
     margin-top: 10px;
 
     @media (max-width: 750px) {
-      font-size:  1rem;
+      font-size: 1rem;
     }
   }
 `

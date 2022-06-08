@@ -6,8 +6,8 @@ function ShopItem (props) {
   return (
     <ItemContainer>
       <img src={props.img}></img>
-      <div className='itemTitle'>{props.title}</div>
-      <div className='price'>{props.price}</div>
+      <div className="itemTitle">{props.title}</div>
+      <div className="price">{props.price}</div>
       <button onClick={() => props.onAddToCart(props.id)}>Add To Cart</button>
     </ItemContainer>
   )
@@ -33,7 +33,7 @@ const ItemContainer = styled.div`
   & img {
     width: 250px;
     height: 250px;
-    object-fit:cover;
+    object-fit: cover;
 
     @media (max-width: 800px) {
       width: 200px;
@@ -48,7 +48,6 @@ const ItemContainer = styled.div`
     border: none;
     cursor: pointer;
     border: 1px solid ${({ theme }) => theme.colors.black};
-    
 
     &:hover {
       background-color: ${({ theme }) => theme.colors.bgButtonHover};
@@ -56,7 +55,7 @@ const ItemContainer = styled.div`
 
     &:active {
       border: 2px solid ${({ theme }) => theme.colors.black};
-    } 
+    }
   }
   & .price {
     font-weight: bold;

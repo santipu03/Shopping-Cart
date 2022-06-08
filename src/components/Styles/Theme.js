@@ -14,7 +14,6 @@ const Theme = {
     bgItemContainer: 'rgba(100,100,100,0.3)',
     bgButtonHover: '#eee'
   }
-
 }
 
 export default Theme

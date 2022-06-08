@@ -8,13 +8,13 @@ import PropTypes from 'prop-types'
 const Header = (props) => {
   return (
     <HeaderContainer>
-      <Link to='/'>Rick And Morty</Link>
+      <Link to="/">Rick And Morty</Link>
       <div>
-        <Link to='/'>Home</Link>
-        <Link to='shop'>Shop</Link>
-        <Link to='contact'>Contact</Link>
+        <Link to="/">Home</Link>
+        <Link to="shop">Shop</Link>
+        <Link to="contact">Contact</Link>
         <IconContainer onClick={props.onCartClicked}>
-          <FontAwesomeIcon icon={faCartShopping} size='lg' />
+          <FontAwesomeIcon icon={faCartShopping} size="lg" />
           <div>{props.numOfItemsInCart}</div>
         </IconContainer>
       </div>
@@ -43,12 +43,14 @@ const HeaderContainer = styled.nav`
     gap: 90px;
 
     @media (max-width: 1100px) {
-      gap: 50px;
+      gap: 40px;
+    }
+    @media (max-width: 800) {
+      gap: 30px;
     }
     @media (max-width: 510px) {
       gap: 20px;
     }
- 
   }
 
   @media (max-width: 1100px) {
@@ -73,7 +75,6 @@ const IconContainer = styled.div`
   cursor: pointer;
   position: relative;
 
-
   & div {
     height: 20px;
     width: 20px;
@@ -88,13 +89,5 @@ const IconContainer = styled.div`
     font-size: 0.8rem;
   }
 `
-
-// const TitleContainer = styled.div`
-//   /* @font-face {
-//     font-family: 'rickAndMorty';
-//     src: url(../Assets/get_schwifty.ttf);
-//   }
-//   font-family: 'rickAndMorty'; */
-// `
 
 export default Header

@@ -18,7 +18,7 @@ function App () {
   useEffect(() => {
     setNumOfItemsInCart(() => {
       let numOfItems = 0
-      itemsInCart.forEach(item => {
+      itemsInCart.forEach((item) => {
         numOfItems += item.quantity
       })
       return numOfItems
@@ -27,8 +27,8 @@ function App () {
 
   const handleChangeQuantity = (value, id) => {
     // First, change the quantity
-    setItemsInCart(prevState => {
-      const newArray = prevState.map(item => {
+    setItemsInCart((prevState) => {
+      const newArray = prevState.map((item) => {
         if (item.id === id) {
           return { ...item, quantity: value }
         }
@@ -38,7 +38,7 @@ function App () {
     })
     // Second, delete any item that its quantity is 0 or less
     setItemsInCart((prevState) => {
-      const newArray = prevState.filter(item => {
+      const newArray = prevState.filter((item) => {
         return item.quantity > 0
       })
       return newArray
@@ -49,12 +49,13 @@ function App () {
     let changedItem = false
 
     // First, if the product is already on cart, we add 1 to quantity
-    setItemsInCart(prevState => {
-      const newArray = prevState.map(itemAdded => {
+    setItemsInCart((prevState) => {
+      const newArray = prevState.map((itemAdded) => {
         if (itemAdded.title === item.title) {
           changedItem = true
           return {
-            ...itemAdded, quantity: itemAdded.quantity + 1
+            ...itemAdded,
+            quantity: itemAdded.quantity + 1
           }
         }
         return itemAdded
@@ -66,13 +67,15 @@ function App () {
     setItemsInCart((prevState) => {
       if (!changedItem) {
         return [
-          ...prevState, {
+          ...prevState,
+          {
             id: item.id,
             title: item.title,
             img: item.img,
             price: item.price,
             quantity: 1
-          }]
+          }
+        ]
       }
       return prevState
     })
@@ -85,9 +88,7 @@ function App () {
           onCartClicked={handleShowCart}
           numOfItemsInCart={numOfItemsInCart}
         />
-        <Main
-          onAddToCart={handleAddToCart}
-        />
+        <Main onAddToCart={handleAddToCart} />
         <Footer />
         <Cart
           isCartOpen={showCart}
@@ -102,9 +103,9 @@ function App () {
 
 const AppContainer = styled.div`
   background-image: url(${BackgroundImage});
-  background-size: cover; 
-  background-position: right; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 `
 
