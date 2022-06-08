@@ -10,9 +10,9 @@ const Header = (props) => {
     <HeaderContainer>
       <Link to="/">Rick And Morty</Link>
       <div>
-        <Link to="/">Home</Link>
-        <Link to="shop">Shop</Link>
-        <Link to="contact">Contact</Link>
+        <Link to="Shopping-Cart/">Home</Link>
+        <Link to="Shopping-Cart/shop">Shop</Link>
+        <Link to="Shopping-Cart/contact">Contact</Link>
         <IconContainer onClick={props.onCartClicked}>
           <FontAwesomeIcon icon={faCartShopping} size="lg" />
           <div>{props.numOfItemsInCart}</div>
