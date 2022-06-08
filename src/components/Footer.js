@@ -11,12 +11,11 @@ const Footer = () => {
 
 const FooterContainer = styled.footer`
   height: 40px;
-  /* background-color: rgba(100,100,100,0.3); */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
 `
 export default Footer

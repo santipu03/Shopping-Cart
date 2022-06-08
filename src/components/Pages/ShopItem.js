@@ -23,7 +23,7 @@ ShopItem.propTypes = {
 
 const ItemContainer = styled.div`
   padding: 10px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: ${({ theme }) => theme.colors.bgItemContainer};
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -44,18 +44,18 @@ const ItemContainer = styled.div`
     height: 40px;
     width: 90%;
     font: inherit;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.white};
     border: none;
     cursor: pointer;
-    border: 1px solid #000;
+    border: 1px solid ${({ theme }) => theme.colors.black};
     
 
     &:hover {
-      background-color: #ddd;
+      background-color: ${({ theme }) => theme.colors.bgButtonHover};
     }
 
     &:active {
-      border: 2px solid #000;
+      border: 2px solid ${({ theme }) => theme.colors.black};
     } 
   }
   & .price {

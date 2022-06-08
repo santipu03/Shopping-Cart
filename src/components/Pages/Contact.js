@@ -39,7 +39,7 @@ function Contact () {
 }
 
 const ContactContainer = styled.div`
-  background-color: rgba(255,255,255,0.8);
+  background-color: ${({ theme }) => theme.colors.bgContactPage};
   padding: 30px;
   height: 420px;
   text-align: center;

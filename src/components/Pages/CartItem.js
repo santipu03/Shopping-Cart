@@ -69,7 +69,7 @@ const InfoContainer = styled.div`
     width: 40px;
     height: 30px;
     outline: none;
-    border: 1px solid #888;
+    border: 1px solid ${({ theme }) => theme.colors.borderInput};
     text-align: center;
     font: inherit;
     cursor: auto;
@@ -88,12 +88,12 @@ const QuantityContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    border: 1px solid #888;
+    border: 1px solid ${({ theme }) => theme.colors.borderInput};
     border-radius: 5px;
     cursor: pointer;
 
     &:active {
-      background-color: rgba(0,0,0,0.1);
+      background-color: ${({ theme }) => theme.colors.lightGrey};
     }
   }
 `

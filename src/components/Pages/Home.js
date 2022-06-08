@@ -47,11 +47,14 @@ const HomeContainer = styled.div`
     width: 130px;
     font: inherit;
     font-size: 1.2rem;
-    border-radius: 5px;
-    border: 1px solid #000;
-    background-color: rgba(255,255,255,0.6);
+    border: 1px solid ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme }) => theme.colors.white};
     margin-top: 30px;
     cursor: pointer;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.bgButtonHover};
+    }
 
     @media (max-width: 750px) {
       font-size:  1rem;

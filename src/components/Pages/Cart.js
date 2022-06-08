@@ -56,7 +56,7 @@ const CartOverlay = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(200, 200, 200, .7);
+  background-color: ${({ theme }) => theme.colors.cartOverlay};
   visibility: ${props => props.isCartOpen ? 'visible' : 'hidden'};
   z-index: ${props => props.isCartOpen ? 10 : -10};
 `
@@ -94,19 +94,19 @@ const ButtonContainer = styled.div`
   & button {
     height: 40px;
     width: 200px;
-    border: 1px solid #000;
+    border: 1px solid ${({ theme }) => theme.colors.black};
     font: inherit;
     cursor: pointer;
 
     &:active {
-      border: 2px solid #000;
+      border: 2px solid ${({ theme }) => theme.colors.black};
     }
   }
   & .submit {
-    background-color: #86efac;
+    background-color: ${({ theme }) => theme.colors.greenButton};
   }
   & .close {
-    background-color: #fca5a5;
+    background-color: ${({ theme }) => theme.colors.redButton};
   }
 `
 const TotalContainer = styled.div`

@@ -29,7 +29,7 @@ Header.propTypes = {
 
 const HeaderContainer = styled.nav`
   height: 80px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: ${({ theme }) => theme.colors.bgHeader};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +78,7 @@ const IconContainer = styled.div`
     height: 20px;
     width: 20px;
     position: absolute;
-    background-color: #f87171;
+    background-color: ${({ theme }) => theme.colors.darkRed};
     border-radius: 50%;
     top: -12px;
     right: -22px;

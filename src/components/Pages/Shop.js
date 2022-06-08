@@ -100,7 +100,7 @@ Shop.propTypes = {
 
 const ShopContainer = styled.div`
   padding: 20px;
-  background-color: rgba(255,255,255,0);
+  background-color: ${({ theme }) => theme.colors.bgShopPage};
   backdrop-filter: blur(8px);
   min-height: 420px;
   display: grid;
