@@ -10,12 +10,13 @@ const Main = (props) => {
   return (
     <MainContainer>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/Shopping-Cart/" element={<Home />} />
         <Route
-          path="/shop"
+          exact
+          path="/Shopping-Cart/shop"
           element={<Shop onAddToCart={props.onAddToCart} />}
         />
-        <Route path="/contact" element={<Contact />} />
+        <Route exact path="/Shopping-Cart/contact" element={<Contact />} />
       </Routes>
     </MainContainer>
   )
